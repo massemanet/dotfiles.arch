@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# do a install from the rolling release ISO
+# enable full disk encryption
+
+# install docker, tmux, emacs
+
+# get my stuff
+(cd /tmp && \
+    git clone https://github.com/massemanet/dotfiles.arch.git && \
+    git remote set-url origin git@github.com:massemanet/dotfiles.arch.git)
+mv /tmp/dotfiles.arch/.git ~
+(cd && git reset --hard)
+
+# emacs (cask)
+curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+(cd ~/.emacs.d && ~/.cask/bin/cask install)
+
+# ssh (upload public key to github)
+ssh-keygen

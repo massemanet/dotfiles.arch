@@ -1,0 +1,23 @@
+# -*- mode: conf -*-
+[user]
+  name = mats cronqvist
+  email = masse@cronqvi.st
+
+[github]
+  user = massemanet
+
+[color]
+   ui = auto
+
+[alias]
+  alias = "!git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'"
+  co = checkout
+  in = log HEAD..origin/master
+  lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  out = log origin/master..HEAD
+  st = status
+  sync = "!git fetch --prune && git pull"
+  unstage = reset HEAD --
+
+[push]
+  default = simple
